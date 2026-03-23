@@ -1,0 +1,14 @@
+.h2 {
+  margin: 0;
+  color: var(--title-color);
+}
+
+.m {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.l {
+  font-size: 34px;
+  font-weight: 700;
+}
