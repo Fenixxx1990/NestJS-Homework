@@ -1,0 +1,31 @@
+.button {
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--background-color-gray);
+  border-radius: 40px;
+
+  background: var(--background-color-white);
+}
+
+.liked {
+  background: var(--background-color-gray);
+}
+
+.svgliked {
+  fill: var(--background-color-gray);
+  stroke: var(--background-color-white);
+}
+
+.button:hover,
+.svg:hover {
+  background: var(--background-color-gray);
+  fill: var(--background-color-gray);
+  stroke: var(--background-color-white);
+}
+
+.liked:hover,
+.svgliked:hover {
+  background: var(--background-color-white);
+  fill: var(--background-color-white);
+  stroke: var(--background-color-gray);
+}

@@ -18,6 +18,7 @@ export const Card = ({
     <div className={styles.card}>
       <div className={styles.image}>
         <Image
+          loading="eager"
           src={imageUrl}
           alt="Изображение кароточки"
           width={280}
