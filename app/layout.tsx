@@ -23,8 +23,10 @@ export default function RootLayout({
 }>): JSX.Element {
   return (
     <html lang="ru" className={openSans.variable}>
-      <Sidebar />
-      <body>{children}</body>
+      <body>
+        <Sidebar />
+        {children}
+      </body>
     </html>
   );
 }

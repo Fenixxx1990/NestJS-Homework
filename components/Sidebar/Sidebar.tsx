@@ -5,9 +5,9 @@ import GitLogo from "./git-logo.svg";
 
 export const Sidebar = ({ ...props }: SidebarProps): JSX.Element => {
   return (
-    <div className={styles.sidebar} {...props}>
+    <header className={styles.sidebar} {...props}>
       <div className={styles.text}>.my_blog</div>
       <GitLogo />
-    </div>
+    </header>
   );
 };

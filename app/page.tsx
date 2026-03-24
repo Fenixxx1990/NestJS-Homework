@@ -19,7 +19,7 @@ export default function Home(): React.JSX.Element {
   };
 
   return (
-    <>
+    <main>
       <Card
         title={"Как работать с CSS Grid"}
         paragraph={
@@ -37,6 +37,6 @@ export default function Home(): React.JSX.Element {
         sendLike={handleLike}
         setLike={setLike}
       />
-    </>
+    </main>
   );
 }
