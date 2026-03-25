@@ -1,11 +1,21 @@
-"use client";
 import { Card } from "@/components";
 import styles from "./page.module.css";
+import { getPosts } from "@/api/posts";
+import { notFound } from "next/navigation";
 
-export default function Home(): React.JSX.Element {
+export default async function Home(): Promise<React.JSX.Element> {
   const array = new Array(10).fill(0);
+  const posts = await getPosts();
+  if (!posts) {
+    notFound();
+  }
   return (
-    <main>
+    <main className={styles.main}>
+      <ul>
+        {posts.map((post) => (
+          <li key={post.id}>{post.title}</li>
+        ))}
+      </ul>
       <div className={styles.wrapper}>
         {array.map((_, index) => (
           <Card
