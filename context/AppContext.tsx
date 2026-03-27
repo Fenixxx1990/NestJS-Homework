@@ -19,7 +19,7 @@ export function AppProvider({
   children: ReactNode;
 }): JSX.Element {
   // Храним ссылку на GitHub
-  const [githubUrl, setGithubUrl] = useState("https://github.com");
+  const [githubUrl, setGithubUrl] = useState("https://github.com/Fenixxx1990");
 
   const value = {
     githubUrl,
