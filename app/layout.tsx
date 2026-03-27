@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
 import "./globals.css";
 import { type JSX } from "react";
-import { Sidebar } from "@/components/Sidebar/Sidebar";
+import { Header } from "@/components/Header/Header";
+import { AppProvider } from "@/context/AppContext";
 
 const openSans = Open_Sans({
   subsets: ["cyrillic"],
@@ -24,8 +25,10 @@ export default function RootLayout({
   return (
     <html lang="ru" className={openSans.variable}>
       <body>
-        <Sidebar />
-        {children}
+        <AppProvider>
+          <Header />
+          {children}
+        </AppProvider>
       </body>
     </html>
   );
