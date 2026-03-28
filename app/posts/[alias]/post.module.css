@@ -1,0 +1,16 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  width: 687px;
+  height: 440px;
+  padding-left: 46px;
+}
+
+.front {
+  display: flex;
+  gap: 2px;
+  font-size: 12px;
+  font-weight: 400;
+}

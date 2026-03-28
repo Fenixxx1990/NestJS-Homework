@@ -4,31 +4,24 @@ import { getPosts } from "@/api/posts";
 import { notFound } from "next/navigation";
 
 export default async function Home(): Promise<React.JSX.Element> {
-  const array = new Array(10).fill(0);
-  const posts = await getPosts();
-  if (!posts) {
+  const takePosts = await getPosts();
+  if (!takePosts) {
     notFound();
   }
+  const posts = takePosts.slice(0, 10);
   return (
     <main className={styles.main}>
-      <ul>
-        {posts.map((post) => (
-          <li key={post.id}>{post.title}</li>
-        ))}
-      </ul>
       <div className={styles.wrapper}>
-        {array.map((_, index) => (
+        {posts.map((post) => (
           <Card
-            key={index}
-            title={"Как работать с CSS Grid"}
-            paragraph={
-              "Грид-раскладка (CSS Grid Layout) представляет собой двумерную систему сеток в CSS. Гриды подойдут и для верстки основных областей страницы.."
-            }
+            key={post.id}
+            title={post.title}
+            paragraph={post.body}
             imageUrl={"/Image.jpg"}
             likeCount={5}
             lastTime={"1 месяц назад"}
             spendTime={"3 минуты"}
-            href={"#"}
+            href={`/posts/${post.id}`}
           ></Card>
         ))}
       </div>

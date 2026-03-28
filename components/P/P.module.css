@@ -4,9 +4,14 @@
   text-decoration-skip-ink: none;
 }
 
-.m {
+.s {
   font-size: 14px;
   line-height: 150%;
+}
+
+.m {
+  font-size: 16px;
+  line-height: 175%;
 }
 
 .l {
