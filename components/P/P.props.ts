@@ -4,6 +4,6 @@ export interface IPProps extends DetailedHTMLProps<
   HTMLAttributes<HTMLParagraphElement>,
   HTMLParagraphElement
 > {
-  size?: "m" | "l";
+  size?: "s" | "m" | "l";
   children: React.ReactNode;
 }

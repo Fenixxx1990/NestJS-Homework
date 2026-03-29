@@ -1,24 +1,27 @@
-"use client";
 import { Card } from "@/components";
 import styles from "./page.module.css";
+import { getPosts } from "@/api/posts";
+import { notFound } from "next/navigation";
 
-export default function Home(): React.JSX.Element {
-  const array = new Array(10).fill(0);
+export default async function Home(): Promise<React.JSX.Element> {
+  const takePosts = await getPosts();
+  if (!takePosts) {
+    notFound();
+  }
+  const posts = takePosts.slice(0, 10);
   return (
-    <main>
+    <main className={styles.main}>
       <div className={styles.wrapper}>
-        {array.map((_, index) => (
+        {posts.map((post) => (
           <Card
-            key={index}
-            title={"Как работать с CSS Grid"}
-            paragraph={
-              "Грид-раскладка (CSS Grid Layout) представляет собой двумерную систему сеток в CSS. Гриды подойдут и для верстки основных областей страницы.."
-            }
+            key={post.id}
+            title={post.title}
+            paragraph={post.body}
             imageUrl={"/Image.jpg"}
             likeCount={5}
             lastTime={"1 месяц назад"}
             spendTime={"3 минуты"}
-            href={"#"}
+            href={`/posts/${post.id}`}
           ></Card>
         ))}
       </div>
