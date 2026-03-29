@@ -3,7 +3,8 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import styles from "./post.module.css";
 import Image from "next/image";
-import { Title, P, Like } from "@/components";
+import { Title, Like } from "@/components";
+import ButtonLike from "./buttonLike";
 
 export const metadata: Metadata = {
   title: "Пост",
@@ -34,7 +35,14 @@ export default async function PagePost({
         width={687}
         height={440}
       />
-      <P size="l">{post.body}</P>
+      <div
+        className={styles.post}
+        dangerouslySetInnerHTML={{ __html: post.body }}
+      />
+      <div className={styles.likebutton}>
+        <span>Понравилось? Жми</span>
+        <ButtonLike />
+      </div>
     </div>
   );
 }

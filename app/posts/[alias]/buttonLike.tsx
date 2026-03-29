@@ -2,7 +2,7 @@
 import { LikeButton } from "@/components";
 import { useState } from "react";
 
-export default function Home(): React.JSX.Element {
+export default function ButtonLike(): React.JSX.Element {
   const [like, setLike] = useState<boolean>(false);
   const handleLike = async (id: number, isLiked: boolean): Promise<void> => {
     try {
