@@ -1,0 +1,17 @@
+.comment {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-bottom: 10px;
+}
+
+.name {
+  font-size: 12px;
+  font-weight: 700;
+  color: #4b4b4b;
+}
+
+.email {
+  font-size: 12px;
+  font-weight: 400;
+}

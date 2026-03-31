@@ -3,7 +3,7 @@ import cn from "classnames";
 import styles from "./Title.module.css";
 
 export function Title({
-  size = "m",
+  size = "s",
   children,
   className,
   ...props
@@ -12,6 +12,7 @@ export function Title({
     <h2
       className={cn(styles.h2, className, {
         [styles.m]: size === "m",
+        [styles.s]: size === "s",
         [styles.l]: size === "l",
       })}
       {...props}

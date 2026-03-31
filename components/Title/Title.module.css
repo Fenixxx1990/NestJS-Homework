@@ -1,9 +1,10 @@
 .h2 {
   margin: 0;
+  margin-bottom: 12px;
   color: var(--title-color);
 }
 
-.m {
+.s {
   font-size: 18px;
   font-weight: 700;
 }
@@ -11,4 +12,9 @@
 .l {
   font-size: 34px;
   font-weight: 700;
+}
+
+.m {
+  font-size: 28px;
+  font-weight: bold;
 }
