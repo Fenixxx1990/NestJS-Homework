@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import styles from "./post.module.css";
 import Image from "next/image";
-import { Title, Like, Comment } from "@/components";
+import { Title, Like, Comment, CommentForm } from "@/components";
 import ButtonLike from "./buttonLike";
 import { getComments } from "@/api/comments";
 
@@ -19,7 +19,6 @@ export default async function PagePost({
   const { alias: id } = await params;
   const post = await getPost(id);
   const comments = await getComments(id);
-  console.log(post);
   if (!post) {
     notFound();
   }
@@ -52,6 +51,7 @@ export default async function PagePost({
             <Comment key={comment.id} comment={comment} />
           ))}
       </div>
+      <CommentForm postId={id} />
     </div>
   );
 }

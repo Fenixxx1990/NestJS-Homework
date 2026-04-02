@@ -1,4 +1,4 @@
-import { API } from "@/app/api";
+import { API } from "@/api/api";
 import type { IPost } from "@/interface/posts.interface";
 
 export async function getPost(id: string): Promise<IPost | null> {

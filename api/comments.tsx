@@ -1,4 +1,4 @@
-import { API } from "@/app/api";
+import { API } from "@/api/api";
 import type { IComment } from "@/interface/comment.interface";
 
 export async function getComments(postId: string): Promise<IComment[] | null> {
