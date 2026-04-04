@@ -3,7 +3,9 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import styles from "./post.module.css";
 import Image from "next/image";
-import { Title, P, Like } from "@/components";
+import { Title, Like, Comment, CommentForm } from "@/components";
+import ButtonLike from "./buttonLike";
+import { getComments } from "@/api/comments";
 
 export const metadata: Metadata = {
   title: "Пост",
@@ -16,7 +18,7 @@ export default async function PagePost({
 }): Promise<React.JSX.Element> {
   const { alias: id } = await params;
   const post = await getPost(id);
-  console.log(post);
+  const comments = await getComments(id);
   if (!post) {
     notFound();
   }
@@ -34,7 +36,22 @@ export default async function PagePost({
         width={687}
         height={440}
       />
-      <P size="l">{post.body}</P>
+      <div
+        className={styles.post}
+        dangerouslySetInnerHTML={{ __html: post.body }}
+      />
+      <div className={styles.likebutton}>
+        <span>Понравилось? Жми</span>
+        <ButtonLike />
+      </div>
+      <div className={styles.comments}>
+        <Title size="m">Комментарии</Title>
+        {comments &&
+          comments.map((comment) => (
+            <Comment key={comment.id} comment={comment} />
+          ))}
+      </div>
+      <CommentForm postId={id} />
     </div>
   );
 }

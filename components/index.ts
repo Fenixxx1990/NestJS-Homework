@@ -3,3 +3,8 @@ export * from "./Title/Title";
 export * from "./P/P";
 export * from "./Card/Card";
 export * from "./LikeButton/LikeButton";
+export * from "./Comment/Comment";
+export * from "./Button/Button";
+export * from "./Input/Input";
+export * from "./Textarea/Textarea";
+export * from "./PageComponents/CommentForm/CommentForm";

@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 
 export default async function Home(): Promise<React.JSX.Element> {
   const takePosts = await getPosts();
+
   if (!takePosts) {
     notFound();
   }

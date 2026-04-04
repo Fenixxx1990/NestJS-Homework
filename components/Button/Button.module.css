@@ -1,0 +1,26 @@
+.button {
+  cursor: pointer;
+
+  display: inline-block;
+
+  box-sizing: border-box;
+  padding: 14px 44px;
+  border: none;
+  border-radius: 8px;
+
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 140%;
+  color: var(--text-color-white);
+  text-align: center;
+
+  background-color: var(--background-color-gray);
+
+  transition: all 0.2s;
+}
+
+.button:hover {
+  border: 1px solid var(--background-color-gray);
+  color: var(--text-color-black);
+  background-color: var(--background-color-white);
+}
