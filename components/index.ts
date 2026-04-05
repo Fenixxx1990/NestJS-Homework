@@ -7,4 +7,5 @@ export * from "./Comment/Comment";
 export * from "./Button/Button";
 export * from "./Input/Input";
 export * from "./Textarea/Textarea";
+export * from "./AnimatedCards/AnimatedCards";
 export * from "./PageComponents/CommentForm/CommentForm";
