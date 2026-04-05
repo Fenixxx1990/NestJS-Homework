@@ -17,6 +17,7 @@ export const CommentForm = ({
     register,
     handleSubmit,
     formState: { errors },
+    clearErrors,
     reset,
   } = useForm<ICommentForm>();
 
@@ -46,6 +47,7 @@ export const CommentForm = ({
         })}
         placeholder="Имя"
         error={errors.name}
+        aria-invalid={errors.name ? true : false}
       />
       <Textarea
         {...register("comment", {
@@ -54,8 +56,11 @@ export const CommentForm = ({
         className={styles.comment}
         error={errors.comment}
         placeholder="Комментарий"
+        aria-invalid={errors.comment ? true : false}
       />
-      <Button className={styles.button}>Отправить</Button>
+      <Button className={styles.button} onClick={() => clearErrors}>
+        Отправить
+      </Button>
     </form>
   );
 };

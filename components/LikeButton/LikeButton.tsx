@@ -22,6 +22,8 @@ export const LikeButton = ({
       })}
       {...props}
       onClick={() => onclick()}
+      aria-expanded={isLiked}
+      aria-label="поставить лайк"
     >
       <LikeIcon className={cn(styles.svg, { [styles.svgliked]: isLiked })} />
     </button>
